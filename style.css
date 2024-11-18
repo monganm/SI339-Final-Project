@@ -1,49 +1,60 @@
-
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background: #00509e;
+    background-color: #003366;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 1em 0;
 }
 
-/* Home Section Styles */
-.home-section {
-    padding: 20px;
-    background: #f4f4f4;
-    margin-bottom: 20px;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
 }
 
-/* Managing Director Section */
-.managing-director {
-    padding: 20px;
-    text-align: center;
-    background: #e8eaf6;
+nav ul li {
+    margin: 0 1em;
 }
 
-.managing-director .profile-pic {
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 2em;
+}
+
+.profile-picture {
+    display: block;
+    margin: 1em auto;
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-bottom: 15px;
 }
 
-.managing-director .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #00509e;
+.button {
+    display: block;
+    text-align: center;
+    background-color: #003366;
     color: white;
+    padding: 0.5em 1em;
+    margin: 1em auto;
     text-decoration: none;
     border-radius: 5px;
+    width: fit-content;
 }
 
-.managing-director .btn:hover {
-    background: #003b73;
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
 }
-
