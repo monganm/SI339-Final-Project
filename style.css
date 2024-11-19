@@ -6,103 +6,94 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.8;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 /* Header and Navigation */
 header {
     background-color: #003366;
     color: white;
-    padding: 1em 0;
-    position: relative;
+    padding: 1.5em 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap; /* Allow navigation to wrap for smaller screens */
     justify-content: center;
+    flex-wrap: wrap; /* Flexibility for smaller screens */
     gap: 1em;
     padding: 0;
-    width: 100%;
 }
 
 nav ul li a {
     color: white;
+    font-weight: 600;
+    padding: 0.5em 1em;
     text-decoration: none;
-    font-weight: bold;
-    padding: 0.5em;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
     background-color: #00509e;
+    transform: scale(1.05);
 }
 
 /* Hamburger Menu */
 .hamburger {
-    display: none; /* Hidden on larger screens */
-    font-size: 2.5em; /* Adjusted size for better visibility */
+    display: none;
+    font-size: 2rem;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    color: #ffcc00;
     background: none;
     border: none;
-    color: #ffcc00; /* Bright yellow for visibility */
     cursor: pointer;
-    position: fixed; /* Stays in the top-right corner */
-    top: 0.5em; /* Space from the top */
-    right: 0.5em; /* Space from the right */
-    z-index: 10; /* Ensure it appears above all other elements */
-}
-
-.hamburger:hover,
-.hamburger:focus {
-    color: #ffcc00; /* Keep it yellow on hover or focus */
-    transform: scale(1.1); /* Optional: Slightly enlarge on hover for interactivity */
-    transition: transform 0.2s ease; /* Smooth scaling effect */
+    z-index: 100;
 }
 
 /* Main Content */
 main {
-    padding: 1.5em;
+    padding: 2em;
+    background-color: white;
+    margin: 2em auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Flexible width */
 }
 
 main h1 {
+    font-size: 2rem;
+    color: #003366;
     text-align: center;
-    font-size: 1.8em;
     margin-bottom: 1em;
 }
 
 main p {
     text-align: justify;
+    font-size: 1rem;
     margin-bottom: 1.5em;
+    color: #444;
 }
 
-/* Profile Picture Section */
-.profile-picture {
-    display: block;
-    margin: 1em auto;
-    width: 100%;
-    max-width: 120px; /* Ensure size limits */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%;
-    border: 3px solid #003366;
-}
-
+/* Buttons */
 .button {
-    display: block;
-    text-align: center;
+    display: inline-block;
     background-color: #003366;
     color: white;
-    padding: 0.7em 1.5em;
-    margin: 1em auto;
+    padding: 0.7em 1.2em;
+    margin: 1em 0;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
-    width: fit-content;
 }
 
 .button:hover,
@@ -115,40 +106,40 @@ footer {
     background-color: #003366;
     color: white;
     text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
+    padding: 1.5em 0;
+    font-size: 0.9rem;
 }
 
-/* Responsive Design Without max-width */
+/* Responsive Design (No max-width) */
 body {
     font-size: 100%; /* Base font scaling */
 }
 
 @media (orientation: portrait) {
-    .hamburger {
-        display: block; /* Show hamburger menu in portrait view */
-    }
-
     nav ul {
         display: none; /* Hide links initially */
-        flex-direction: column; /* Stacked layout for smaller screens */
+        flex-direction: column;
         align-items: center;
         background-color: #003366;
         padding: 1em;
         position: absolute;
-        top: 100%; /* Position below the header */
+        top: 100%;
         left: 0;
         width: 100%;
     }
 
     nav ul.show {
-        display: flex; /* Show links when toggled */
+        display: flex;
     }
 
     nav ul li a {
         width: 100%;
         text-align: center;
         padding: 1em;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger in portrait view */
     }
 }
 
@@ -160,4 +151,57 @@ body {
     .hamburger {
         display: none; /* Hide hamburger in landscape */
     }
+}
+
+/* Contact Form */
+form {
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Flexible width */
+    margin: 2em auto;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #003366;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #00509e;
+    box-shadow: 0 0 5px rgba(0, 80, 158, 0.5);
+    outline: none;
+}
+
+form button {
+    background-color: #003366;
+    color: white;
+    padding: 0.7em 1.5em;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover,
+form button:focus {
+    background-color: #00509e;
+    transform: scale(1.05);
 }
