@@ -19,6 +19,7 @@ header {
     padding: 1.5em 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 nav ul {
@@ -27,12 +28,13 @@ nav ul {
     flex-direction: column; /* Mobile-first: stacked */
     align-items: center;
     gap: 1em;
-    padding: 0;
+    padding: 1em 0;
     background-color: #003366;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
+    z-index: 10;
 }
 
 nav ul.show {
@@ -63,11 +65,15 @@ nav ul li a:focus {
     position: absolute;
     top: 1em;
     right: 1em;
-    color: #ffcc00;
+    color: #FFFF00;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 100;
+    z-index: 20;
+}
+
+.hamburger:focus {
+    outline: none;
 }
 
 /* Main Content */
