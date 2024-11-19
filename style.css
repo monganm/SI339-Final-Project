@@ -23,20 +23,31 @@ header {
 
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Flexibility for smaller screens */
+    display: none; /* Hidden by default for mobile */
+    flex-direction: column; /* Mobile-first: stacked */
+    align-items: center;
     gap: 1em;
     padding: 0;
+    background-color: #003366;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+nav ul.show {
+    display: flex; /* Show on toggle */
 }
 
 nav ul li a {
     color: white;
     font-weight: 600;
-    padding: 0.5em 1em;
+    padding: 1em;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    width: 100%;
 }
 
 nav ul li a:hover,
@@ -47,7 +58,7 @@ nav ul li a:focus {
 
 /* Hamburger Menu */
 .hamburger {
-    display: none;
+    display: block;
     font-size: 2rem;
     position: absolute;
     top: 1em;
@@ -66,21 +77,40 @@ main {
     margin: 2em auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Flexible width */
+    width: calc(100% - 4em); /* Flexible width for mobile */
 }
 
+/* Typography */
 main h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #003366;
     text-align: center;
+    margin-bottom: 1.5em;
+    letter-spacing: 1px;
+}
+
+main h2 {
+    font-size: 1.8rem;
+    color: #00509e;
     margin-bottom: 1em;
+    letter-spacing: 0.5px;
 }
 
 main p {
     text-align: justify;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 1.5em;
-    color: #444;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 2.5em;
+    padding: 1.5em;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Buttons */
@@ -88,17 +118,27 @@ main p {
     display: inline-block;
     background-color: #003366;
     color: white;
-    padding: 0.7em 1.2em;
-    margin: 1em 0;
+    padding: 0.7em 1.5em;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
 }
 
 .button:hover,
 .button:focus {
     background-color: #00509e;
+    transform: scale(1.1);
+}
+
+/* Images */
+.profile-picture {
+    display: block;
+    height: auto;
+    border-radius: 50%;
+    margin: 1.5em auto;
 }
 
 /* Footer */
@@ -110,46 +150,28 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Design (No max-width) */
-body {
-    font-size: 100%; /* Base font scaling */
+footer p {
+    font-size: 1rem;
+    color: #ddd;
 }
 
-@media (orientation: portrait) {
+/* Responsive Design */
+@media (min-width: 769px) {
     nav ul {
-        display: none; /* Hide links initially */
-        flex-direction: column;
-        align-items: center;
-        background-color: #003366;
-        padding: 1em;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
+        display: flex;
+        flex-direction: row; /* Horizontal for larger screens */
+        justify-content: center;
+        gap: 1em;
+        position: static;
+        background-color: transparent;
     }
 
-    nav ul.show {
-        display: flex;
+    .hamburger {
+        display: none; /* Hide hamburger on larger screens */
     }
 
     nav ul li a {
-        width: 100%;
-        text-align: center;
-        padding: 1em;
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger in portrait view */
-    }
-}
-
-@media (orientation: landscape) {
-    nav ul {
-        flex-direction: row; /* Horizontal layout for wider screens */
-    }
-
-    .hamburger {
-        display: none; /* Hide hamburger in landscape */
+        width: auto; /* Inline links for desktop view */
     }
 }
 
@@ -159,7 +181,7 @@ form {
     padding: 2em;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Flexible width */
+    width: calc(100% - 4em);
     margin: 2em auto;
 }
 
