@@ -1,3 +1,6 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500&display=swap');
+
 /* General Reset */
 * {
     margin: 0;
@@ -6,7 +9,7 @@
 }
 
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif; /* Professional and clean */
     line-height: 1.8;
     background-color: #f9f9f9;
     color: #333;
@@ -14,66 +17,73 @@ body {
 
 /* Header and Navigation */
 header {
-    background-color: #003366;
-    color: white;
-    padding: 1.5em 0;
-    text-align: center;
+    background: linear-gradient(90deg, #003366, #00509e);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo {
+    max-height: 60px;
+    object-fit: contain;
 }
 
 nav ul {
     list-style: none;
-    display: none; /* Hidden by default for mobile */
-    flex-direction: column; /* Mobile-first: stacked */
-    align-items: center;
-    gap: 1em;
-    padding: 1em 0;
-    background-color: #003366;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-}
-
-nav ul.show {
-    display: flex; /* Show on toggle */
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
     color: white;
-    font-weight: 600;
-    padding: 1em;
+    font-weight: bold;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-align: center;
-    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
-    background-color: #00509e;
-    transform: scale(1.05);
+    background-color: #003366;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu for Mobile */
 .hamburger {
-    display: block;
+    display: none;
     font-size: 2rem;
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    color: #FFFF00;
+    color: white;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 20;
-}
-
-.hamburger:focus {
-    outline: none;
+    z-index: 10;
 }
 
 /* Main Content */
@@ -83,60 +93,78 @@ main {
     margin: 2em auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: calc(100% - 4em); /* Flexible width for mobile */
 }
 
-/* Typography */
 main h1 {
-    font-size: 2.5rem;
-    color: #003366;
+    font-size: 3rem;
     text-align: center;
-    margin-bottom: 1.5em;
-    letter-spacing: 1px;
+    font-family: 'Lora', serif;
+    color: #003366;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #00509e;
+    display: inline-block;
+    margin: 1rem auto;
+    padding-bottom: 0.5rem;
 }
 
 main h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-family: 'Lora', serif;
     color: #00509e;
-    margin-bottom: 1em;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
 }
 
 main p {
-    text-align: justify;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
+    text-align: justify;
+    color: #555;
     margin-bottom: 1.5em;
     line-height: 1.8;
-    color: #555;
 }
 
-/* Section Styling */
+/* Section Styling with Enhanced Headings */
 section {
     margin-bottom: 2.5em;
     padding: 1.5em;
     background-color: #f4f4f4;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Buttons */
 .button {
     display: inline-block;
     background-color: #003366;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: white;
     padding: 0.7em 1.5em;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
     font-size: 1.1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
 .button:hover,
 .button:focus {
     background-color: #00509e;
-    transform: scale(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Images */
@@ -149,11 +177,12 @@ section {
 
 /* Footer */
 footer {
-    background-color: #003366;
+    background: linear-gradient(90deg, #003366, #00509e);
     color: white;
     text-align: center;
-    padding: 1.5em 0;
+    padding: 2em 0;
     font-size: 0.9rem;
+    border-top: 3px solid #00509e;
 }
 
 footer p {
@@ -161,24 +190,15 @@ footer p {
     color: #ddd;
 }
 
-/* Responsive Design */
-@media (min-width: 769px) {
-    nav ul {
-        display: flex;
-        flex-direction: row; /* Horizontal for larger screens */
-        justify-content: center;
-        gap: 1em;
-        position: static;
-        background-color: transparent;
-    }
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
 
-    .hamburger {
-        display: none; /* Hide hamburger on larger screens */
-    }
-
-    nav ul li a {
-        width: auto; /* Inline links for desktop view */
-    }
+footer a:hover {
+    color: #003366;
 }
 
 /* Contact Form */
@@ -186,16 +206,13 @@ form {
     background-color: #ffffff;
     padding: 2em;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: calc(100% - 4em);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     margin: 2em auto;
+    transition: box-shadow 0.3s ease;
 }
 
-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #003366;
+form:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 form input,
@@ -231,5 +248,42 @@ form button {
 form button:hover,
 form button:focus {
     background-color: #00509e;
-    transform: scale(1.05);
+    transform: translateY(-2px);
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Navigation (No max-width!) */
+@media (hover: none) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #003366;
+        padding: 1rem;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
 }
