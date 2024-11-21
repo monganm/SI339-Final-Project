@@ -20,16 +20,32 @@ document.querySelectorAll('a[href]').forEach(link => {
     });
 });
 
-// Select the hamburger button and navigation
+// Apply fade-in animation when sections come into view
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+});
+
+// Hamburger Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('nav ul');
 
-// Add event listener to toggle navigation visibility
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('show');
-
-        // Ensure the menu always appears in the correct position
         if (navMenu.classList.contains('show')) {
             navMenu.style.position = 'absolute';
             navMenu.style.top = '100%';
@@ -40,11 +56,10 @@ if (hamburger && navMenu) {
         }
     });
 
-    // Prevent the hamburger menu from overlapping other elements on larger screens
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
-            navMenu.classList.remove('show'); // Close menu on larger screens
-            navMenu.style.position = 'static'; // Reset menu position
+            navMenu.classList.remove('show');
+            navMenu.style.position = 'static';
         }
     });
 }
