@@ -63,3 +63,11 @@ if (hamburger && navMenu) {
         }
     });
 }
+
+// Handle Newsletter Subscription Form Submission
+document.querySelector(".footer-container form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+    alert(`Thank you for subscribing with ${email}!`);
+    e.target.reset(); // Clear the form after submission
+});
