@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XPKMB94ZCQ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,64 +16,58 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="vision.html">Vision</a></li>
-                <li><a href="critical-minerals.html">Critical Minerals</a></li>
-                <li><a href="geothermal-energy.html">Geothermal Energy</a></li>
-                <li><a href="overview.html">Overview of Activities</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html" class="active">Contact Us</a></li>
-                <li><a href="drilling.html">Drilling</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <img src="../fake-logo.jpg" alt="Company Logo" class="logo">
+            <button class="hamburger" aria-label="Toggle Navigation">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="critical-minerals.html">Critical Minerals</a></li>
+                    <li><a href="geothermal-energy.html">Geothermal Energy</a></li>
+                    <li><a href="overview.html">Overview</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="drilling.html">Drilling</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <h1>Contact Us</h1>
 
-        <!-- Contact Section with Animation -->
-        <section class="contact-section fade-in">
+        <!-- Contact Section -->
+        <section class="contact-section">
             <div class="contact-container">
-                <!-- Left Column: Contact Info -->
                 <div class="contact-info">
                     <h2>Get in Touch</h2>
-                    <p>
-                        We value your feedback and inquiries. Contact us for more information about our services or collaboration opportunities. 
-                        Our team is here to help!
-                    </p>
+                    <p>Have a question? Reach out to our team!</p>
                     <ul>
                         <li><strong>Address:</strong> 11 Adelaide Rd, Dublin, Ireland</li>
                         <li><strong>Phone:</strong> +1 (555) 123-4567</li>
                         <li><strong>Email:</strong> contact@geoscience.com</li>
                     </ul>
                 </div>
-
-                <!-- Right Column: Contact Form -->
                 <div class="contact-form">
                     <form action="#" method="POST">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
+                        <input type="text" id="name" name="name" required>
                         <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
+                        <input type="email" id="email" name="email" required>
                         <label for="message">Your Message</label>
-                        <textarea id="message" name="message" placeholder="Enter your message" rows="5" required></textarea>
-
+                        <textarea id="message" name="message" required></textarea>
                         <button type="submit">Send Message</button>
                     </form>
                 </div>
             </div>
         </section>
 
-        <!-- Google Map -->
-        <div class="map-container fade-in">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.5945369559117!2d-6.262394723269239!3d53.332612772285295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670ea199db6aff%3A0x1bb34c231e282b92!2s11%20Adelaide%20Rd%2C%20Saint%20Kevin&#39;s%2C%20Dublin%2C%20D02%20TR79%2C%20Ireland!5e0!3m2!1sen!2sus!4v1732110197897!5m2!1sen!2sus" 
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        <!-- Map -->
+        <section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.5945369559117!2d-6.262394723269239!3d53.332612772285295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670ea199db6aff%3A0x1bb34c231e282b92!2s11%20Adelaide%20Rd%2C%20Saint%20Kevin's%2C%20Dublin%2C%20D02%20TR79%2C%20Ireland!5e0!3m2!1sen!2sus!4v1732110197897!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
     </main>
 
     <footer>
