@@ -535,3 +535,21 @@ form button:focus {
 .footer-container button[type="submit"]:hover {
     background-color: #ffc107;
 }
+.profile-picture {
+    width: 200px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the image */
+    margin: 0 auto; /* Center horizontally */
+    border-radius: 50%; /* Optional: Makes it circular */
+}
+.profile-section {
+    text-align: center; /* Center-aligns all content inside the section */
+    margin: 2em auto; /* Centers the section itself and adds spacing */
+    padding: 1em; /* Adds spacing inside the section */
+}
+
+.profile-section .button {
+    display: inline-block; /* Ensures the button is centered with text-align */
+    margin-top: 1em; /* Adds spacing above the button */
+}
+

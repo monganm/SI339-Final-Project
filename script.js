@@ -71,3 +71,47 @@ document.querySelector(".footer-container form").addEventListener("submit", (e) 
     alert(`Thank you for subscribing with ${email}!`);
     e.target.reset(); // Clear the form after submission
 });
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDMY1uY7FU3etRrByQTP17JEwtUfBy2FTA",
+  authDomain: "geotechlite.firebaseapp.com",
+  projectId: "geotechlite",
+  storageBucket: "geotechlite.firebasestorage.app",
+  messagingSenderId: "352395562298",
+  appId: "1:352395562298:web:be03d70a0941148cbe1403",
+  measurementId: "G-G7HXLQ3D0V"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+// Reference Firestore
+const db = firebase.firestore();
+
+// Handle form submission
+document.getElementById("emailForm").addEventListener("submit", async (e) => {
+  e.preventDefault(); // Prevent form from reloading the page
+
+  const email = document.getElementById("email").value;
+
+  try {
+    // Save email to Firestore
+    await db.collection("emails").add({ email: email });
+    alert("Email submitted successfully!");
+  } catch (error) {
+    console.error("Error adding email: ", error);
+    alert("Failed to submit email.");
+  }
+
+  // Clear the form
+  document.getElementById("emailForm").reset();
+});
