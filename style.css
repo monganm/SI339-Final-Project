@@ -75,7 +75,7 @@ nav ul li a:focus {
     background-color: #003366;
 }
 
-/* Hamburger Menu for Mobile */
+/* Hamburger Menu  */
 .hamburger {
     display: none;
     font-size: 2rem;
@@ -333,7 +333,7 @@ form button:focus {
     align-items: center; 
     justify-content: center;
     text-align: center;
-    color: white; 
+    color: #333333
 }
 
 .hero-section h1 {
