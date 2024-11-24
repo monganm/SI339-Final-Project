@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif; /* Professional and clean */
+    font-family: 'Roboto', Arial, sans-serif; 
     line-height: 1.8;
     background-color: #f9f9f9;
     color: #333;
@@ -254,6 +254,7 @@ form textarea {
     border-radius: 5px;
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 form input:focus,
@@ -320,19 +321,19 @@ form button:focus {
     }
 }
 
-/* Hero Section Styling */
+
 .hero-section {
-    position: relative; /* Allows for overlaying text */
+    position: relative; 
     width: 100%;
-    height: 400px; /* Adjustable height */
-    background-size: cover; /* Ensure the image fills the section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Avoid repeated backgrounds */
+    height: 400px; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     display: flex;
-    align-items: center; /* Vertically center the text */
-    justify-content: center; /* Horizontally center the text */
+    align-items: center; 
+    justify-content: center;
     text-align: center;
-    color: white; /* Ensure text is visible */
+    color: white; 
 }
 
 .hero-section h1 {
@@ -340,7 +341,7 @@ form button:focus {
     font-size: 3.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Enhance readability */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); 
     margin: 0;
 }
 
@@ -409,8 +410,11 @@ form button:focus {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    color: #555;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form input::placeholder {
+    color: #d400ff !important;
 }
 
 .contact-form input:focus,
@@ -516,7 +520,7 @@ form button:focus {
 .footer-container input[type="email"] {
     padding: 0.5rem;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #080808;
     font-size: 1rem;
 }
 
@@ -536,20 +540,22 @@ form button:focus {
     background-color: #ffc107;
 }
 .profile-picture {
-    width: 200px; /* Set a fixed width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Center the image */
-    margin: 0 auto; /* Center horizontally */
-    border-radius: 50%; /* Optional: Makes it circular */
+    width: 200px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 50%; 
 }
 .profile-section {
-    text-align: center; /* Center-aligns all content inside the section */
-    margin: 2em auto; /* Centers the section itself and adds spacing */
-    padding: 1em; /* Adds spacing inside the section */
+    text-align: center; 
+    margin: 2em auto; 
+    padding: 1em; 
 }
 
 .profile-section .button {
-    display: inline-block; /* Ensures the button is centered with text-align */
-    margin-top: 1em; /* Adds spacing above the button */
+    display: inline-block; 
+    margin-top: 1em; 
 }
+
+
 

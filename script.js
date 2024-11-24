@@ -5,7 +5,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 document.querySelectorAll('a[href]').forEach(link => {
     link.addEventListener('click', (e) => {
         const href = e.target.getAttribute('href');
-        
+
         // Only proceed if href exists and starts with #
         if (href && href.startsWith('#')) {
             e.preventDefault(); // Prevent default action
@@ -44,30 +44,36 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('nav ul');
 
 if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent interference with other elements
         navMenu.classList.toggle('show');
-        if (navMenu.classList.contains('show')) {
-            navMenu.style.position = 'absolute';
-            navMenu.style.top = '100%';
-            navMenu.style.left = '0';
-            navMenu.style.width = '100%';
-        } else {
-            navMenu.style.position = ''; // Reset to default when hidden
-        }
     });
 
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
-            navMenu.classList.remove('show');
-            navMenu.style.position = 'static';
+            navMenu.classList.remove('show'); // Reset for larger screens
         }
     });
+
+    // Close menu if clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('show');
+        }
+    });
+} else {
+    console.error('Hamburger menu or nav ul is missing on this page.');
 }
 
 // Handle Newsletter Subscription Form Submission
-document.querySelector(".footer-container form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = e.target.querySelector('input[type="email"]').value;
-    alert(`Thank you for subscribing with ${email}!`);
-    e.target.reset(); // Clear the form after submission
-});
+const form = document.querySelector(".footer-container form");
+if (form) {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = e.target.querySelector('input[type="email"]').value;
+        alert(`Thank you for subscribing with ${email}!`);
+        e.target.reset(); // Clear the form after submission
+    });
+} else {
+    console.error('Newsletter form is missing on this page.');
+}
