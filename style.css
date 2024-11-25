@@ -146,7 +146,7 @@ section h1,
 section h2 {
     font-family: 'Lora', serif;
     font-size: 2.5rem;
-    color: #003366;
+    color: #002244;
     text-align: center;
     margin-bottom: 1em;
     letter-spacing: 1.5px;
@@ -466,8 +466,6 @@ form button:focus {
         transform: translateY(0);
     }
 }
-
-
 /* Footer Styling */
 .footer-container {
     display: flex;
@@ -556,6 +554,3 @@ form button:focus {
     display: inline-block; 
     margin-top: 1em; 
 }
-
-
-

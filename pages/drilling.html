@@ -16,10 +16,11 @@
     <link rel="icon" type="image/png" href="../favicon.png">
 </head>
 <body>
-    <header>
+    <!-- Header Landmark -->
+    <header role="banner">
         <img src="../geotechlitelogo.png" alt="Company Logo" class="logo">
         <button class="hamburger" aria-label="Toggle Navigation">☰</button>
-        <nav>
+        <nav role="navigation" aria-label="Main Navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -34,60 +35,60 @@
         </nav>
     </header>
     
-    <div class="hero-section" style="background-image: url('../drilling.png');">
-        <h1>Drilling</h1>
-    </div>
+    <!-- Main Landmark -->
+    <main role="main">
+        <!-- Hero Section -->
+        <div class="hero-section" style="background-image: url('../drilling.png');">
+            <h1>Drilling</h1>
+        </div>
 
-    <main>
-        
-
-        <section>
-           
+        <!-- Content Section -->
+        <section aria-labelledby="drilling-overview">
+            <h2 id="drilling-overview">Overview of Drilling</h2>
             <p>
                 Drilling is often conducted as part of an exploration program to obtain detailed information about the rock and any mineral or fluid deposits present below the ground surface. 
                 The drilling method and size of the drilling rig used depends on the type of rock and information sought.
-                 The degree of disturbance around the hole varies with each method, however, strict environmental safeguards ensure all drill sites are rehabilitated after the completion of drilling.
-
+                The degree of disturbance around the hole varies with each method, however, strict environmental safeguards ensure all drill sites are rehabilitated after the completion of drilling.
             </p>
         </section>
-        <section>
 
-            <p><strong>Air Drilling </strong> creates rock fragments (chips). These are removed from the drill hole by compressed air, which is forced down the hole and lifts the rock chips to the surface. 
-                This type of drilling requires minimal site preparation. </p>
-                
-                <p><strong>Deeper Drilling Air Drilling </strong>- there are two main types of air drilling used to drill deeper holes – open hole percussion (also known as rotary air blast or RAB) and reverse circulation (RC). These drilling techniques involve the use of compressed air to drive a slowly rotating percussion drill bit, which operates in a similar manner to a jackhammer.
-                     The drill bit is typically fitted with numerous hardened protrusions that crush the rock at the bottom of the hole. 
-                     It produces rock chips that are lifted to the surface by compressed air. This drilling method is relatively fast, 
-                     can penetrate hard rock, and is capable of drilling holes in excess of 250 metres deep. These methods do not necessarily require significant site preparation and rehabilitation.
-                      They usually involve truck-mounted rigs with one or two support vehicles to carry drill rods and air compressor capacity. </p>
-                
-                      <p><strong>Diamond Drilling </strong>– uses a truck-mounted rig with support vehicles to extract a continuous cylinder of rock. 
-                    It involves the use of a rapidly rotating drill bit that utilises water and drilling fluids, contained in either in-ground sumps or above-ground tanks, 
-                    to cool and lubricate the drill bit. As the drill rods advance, the cylinder of remaining rock gradually becomes enveloped by the drill rods.
-                     Ground-up rock material is transported to the surface by the returning drilling fluids and is separated from the fluids, typically in drill sumps. 
-                     This drilling method is the costliest and is capable of drilling holes many kilometres in depth. Depending on the duration of the drilling program,
-                      additional equipment such as portable shelters, storage containers, and portable lighting plants may be required. 
-                      This method requires significant site preparation and rehabilitation. 
-                      Most advanced exploration for coal and minerals uses a combination of diamond and reverse circulation drilling.</p>
-                     
-                      <p><strong>Rotary Mud Drilling </strong>- is most often used for deep drilling through the layers of the Earth or stratigraphy.
-                         This method produces fine rock fragments and uses water and drilling fluids to lubricate the drill bit and return the rock fragments to the surface. 
-                         The drilling fluids are contained in either inground sumps or above-ground tanks.
-                          The drilling rigs are usually larger than for other methods and require more support vehicles and site preparation. 
-                          Costean or trench sampling - involves digging a costean or trench using a backhoe or similar equipment. 
-                          The costean or trench may range from 20cm wide to more than a metre, and from a few centimetres deep (where hard rock is near the surface) to metres deep.
-                           The edges of the trench are typically mapped geologically, and channel samples collected prior to the trench being filled in and fully rehabilitated. Channel sampling – involves collection of a series of samples of soil or rock along a line. </p>
-        
-                    <p><strong>Bulk Sampling </strong> - Prior to deciding to apply to develop a mine, an explorer may extract a bulk sample of the material to be mined to allow further testing and refinement of the proposed mining and mineral processing procedures. Extraction of a bulk sample may typically involve excavation of a large pit or small open cut,
-                         or development of a small underground operation</p>
-            </section>
+        <!-- Detailed Drilling Methods -->
+        <section aria-labelledby="air-drilling">
+            <h2 id="air-drilling">Air Drilling</h2>
+            <p>
+                Air Drilling creates rock fragments (chips). These are removed from the drill hole by compressed air, which is forced down the hole and lifts the rock chips to the surface. 
+                This type of drilling requires minimal site preparation.
+            </p>
+            <p>
+                <strong>Deeper Drilling Air Drilling:</strong> There are two main types of air drilling used to drill deeper holes – open hole percussion (also known as rotary air blast or RAB) and reverse circulation (RC). These drilling techniques involve the use of compressed air to drive a slowly rotating percussion drill bit, which operates in a similar manner to a jackhammer. The drill bit is typically fitted with numerous hardened protrusions that crush the rock at the bottom of the hole. It produces rock chips that are lifted to the surface by compressed air.
+            </p>
+        </section>
 
-        <section>
-            <img src="../group-photo.png" alt="Critical Minerals Top Image">
-            
+        <!-- Additional Drilling Techniques -->
+        <section aria-labelledby="diamond-drilling">
+            <h2 id="diamond-drilling">Diamond Drilling</h2>
+            <p>
+                Diamond Drilling uses a truck-mounted rig with support vehicles to extract a continuous cylinder of rock. It involves the use of a rapidly rotating drill bit that utilises water and drilling fluids, contained in either in-ground sumps or above-ground tanks, to cool and lubricate the drill bit.
+            </p>
+        </section>
+
+        <!-- Bulk Sampling Section -->
+        <section aria-labelledby="bulk-sampling">
+            <h2 id="bulk-sampling">Bulk Sampling</h2>
+            <p>
+                Prior to deciding to apply to develop a mine, an explorer may extract a bulk sample of the material to be mined to allow further testing and refinement of the proposed mining and mineral processing procedures.
+            </p>
+        </section>
+
+        <!-- Image Section -->
+        <section aria-labelledby="drilling-photo">
+            <h2 id="drilling-photo" class="visually-hidden">Photo of Drilling</h2>
+            <img src="../group-photo.png" alt="Group photo near drilling site">
         </section>
     </main>
-    <footer>
+
+    <!-- Footer Landmark -->
+    <footer role="contentinfo">
         <div class="footer-container">
             <div class="quick-links">
                 <h2>Quick Links</h2>
@@ -101,9 +102,7 @@
             <div class="social-media">
                 <h2>Follow Us On</h2>
                 <ul>
-                    
                     <li><a href="https://www.linkedin.com/in/joe-mongan/" aria-label="LinkedIn">LinkedIn</a></li>
-                    
                 </ul>
             </div>
             <div class="newsletter">
